@@ -9,18 +9,15 @@ I came to software from heavy-duty manufacturing and industrial distribution: pa
 | Project | What it demonstrates | Fast reading path |
 | --- | --- | --- |
 | [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | AI-assisted customer action with a human-approved, hash-bound action boundary. The [live demo](https://ultra-csm.vercel.app/) is synthetic, read-only, and requires no login. | Demo → architecture → gate tests |
-| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | The experiment repo preserves an invalidated study and refuses to manufacture a result; scheduled CI pins and tests the separate public [`3xit2_demo`](https://github.com/owieschon/3xit2_demo) enforcement mechanism. | Lab diagram → gate → smoke test |
-| [Receipts](https://github.com/owieschon/receipts) | A 127-case evaluation run completed, failed its precommitted quality gate, and stopped without threshold shopping. | Case study → JSON receipt → verifier |
+| [SKU Resolver](https://github.com/owieschon/sku-resolver) | Tenant-scoped, catalog-bound identity resolution. Models may rank retrieved candidates, but only active catalog rows can become binding identifiers; ambiguity becomes `pending` or `unresolvable`. | Contract → resolver service → catalog-boundary tests |
+| [3xit enforcement engine](https://github.com/owieschon/3xit2_demo) | An independent release layer for unattended coding agents that catches oracle tampering, stale evidence, partial execution, and live-path mismatches across a 50-case adversarial suite. | First catch → enforcement path → adversarial suite |
+| [Contact Verifier](https://github.com/owieschon/contact-verifier) | A compact tenant-aware integration that converts incomplete DNS and identity evidence into bounded risk instead of false certainty. | Contract → evidence adapters → integration tests |
 
 Across them, models may extract, rank, or draft; deterministic code owns binding state changes; humans retain judgment; receipts make the result auditable.
 
 ## A decision I am proud of
 
 [Why I killed a 0.99 AUC model](./case-studies/why-i-killed-a-099-auc-model.md) pairs a qualitative decision record with a seeded public experiment: a full-period feature appears nearly perfect until a point-in-time reconstruction removes the future information it was using.
-
-## Additional work
-
-[Contact Verifier](https://github.com/owieschon/contact-verifier) is a compact tenant-aware integration that returns `risky` when DNS evidence cannot justify certainty. SKU Resolver remains outside the featured set until its rule-level publication provenance is fully classified.
 
 ## What I bring to an AI-native team
 
