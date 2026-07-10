@@ -8,8 +8,9 @@ I came to software from heavy-duty manufacturing and industrial distribution: pa
 
 | Project | What it demonstrates | Fast reading path |
 | --- | --- | --- |
-| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | AI-assisted customer action with a human-approved, hash-bound action boundary. | Architecture → workflow → gate tests |
-| [Agent Governance Lab](https://github.com/owieschon/code_ver) | The experiment repo preserves an invalidated study and refuses to manufacture a result; scheduled CI pins and tests the separate public [`3xit2_demo`](https://github.com/owieschon/3xit2_demo) enforcement mechanism. | Lab diagram → gate → smoke test |
+| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | AI-assisted customer action with a human-approved, hash-bound action boundary. The [live demo](https://ultra-csm.vercel.app/) is synthetic, read-only, and requires no login. | Demo → architecture → gate tests |
+| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | The experiment repo preserves an invalidated study and refuses to manufacture a result; scheduled CI pins and tests the separate public [`3xit2_demo`](https://github.com/owieschon/3xit2_demo) enforcement mechanism. | Lab diagram → gate → smoke test |
+| [Receipts](https://github.com/owieschon/receipts) | A 127-case evaluation run completed, failed its precommitted quality gate, and stopped without threshold shopping. | Case study → JSON receipt → verifier |
 
 Across them, models may extract, rank, or draft; deterministic code owns binding state changes; humans retain judgment; receipts make the result auditable.
 
