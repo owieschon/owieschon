@@ -17,7 +17,7 @@ Across them, models may extract, rank, or draft; deterministic code owns binding
 
 ## A decision I am proud of
 
-[Why I killed a 0.99 AUC model](./case-studies/why-i-killed-a-099-auc-model.md) pairs a qualitative decision record with a seeded public experiment: a full-period feature appears nearly perfect until a point-in-time reconstruction removes the future information it was using.
+[Why I killed a 0.99 AUC model](./case-studies/why-i-killed-a-099-auc-model.md) pairs a qualitative decision record with a seeded public experiment and an independent multi-seed verifier: a full-period feature appears nearly perfect until a point-in-time reconstruction removes the future information it was using.
 
 ## What I bring to an AI-native team
 
