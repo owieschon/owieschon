@@ -1,6 +1,8 @@
 # Owen Schoeniger
 
-I build customer-facing AI systems for messy enterprise workflows—systems that turn uncertain model output into evidence-backed, human-authorized action.
+<!-- clean-docs:purpose -->
+I build AI systems, developer tools, and data products with explicit trust boundaries. I prefer deterministic cores, inspectable evidence, and agents that can propose or verify work without silently acquiring authority.
+<!-- clean-docs:end purpose -->
 
 I came to software from heavy-duty manufacturing and industrial distribution: parts catalogs, ERP data, sales workflows, and customers who rarely resemble clean benchmark rows. That experience taught me to design for the cost of a confident wrong answer.
 
@@ -8,12 +10,15 @@ I came to software from heavy-duty manufacturing and industrial distribution: pa
 
 | Project | What it demonstrates | Fast reading path |
 | --- | --- | --- |
-| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | AI-assisted customer action with a human-approved, hash-bound action boundary. The [live demo](https://ultra-csm.vercel.app/) is synthetic, read-only, and requires no login. | Demo → architecture → gate tests |
-| [SKU Resolver](https://github.com/owieschon/sku-resolver) | Tenant-scoped, catalog-bound identity resolution. Models may rank retrieved candidates, but only active catalog rows can become binding identifiers; ambiguity becomes `pending` or `unresolvable`. | Contract → resolver service → catalog-boundary tests |
-| [3xit enforcement engine](https://github.com/owieschon/3xit2_demo) | An independent release layer for unattended coding agents that catches oracle tampering, stale evidence, partial execution, and live-path mismatches across a 50-case adversarial suite. | First catch → enforcement path → adversarial suite |
-| [Contact Verifier](https://github.com/owieschon/contact-verifier) | A compact tenant-aware integration that converts incomplete DNS and identity evidence into bounded risk instead of false certainty. | Contract → evidence adapters → integration tests |
+| [clean-docs](https://github.com/owieschon/clean-docs) | Source-bound documentation repair, verification, and human/agent projections. | Overview → drift tutorial → deterministic seam |
+| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | AI-assisted customer action with a human-approved, hash-bound action boundary. The [live demo](https://ultra-csm.vercel.app/) is synthetic and read-only. | Demo → architecture → gate tests |
+| [bank-mcp](https://github.com/owieschon/bank-mcp) | Tenant-scoped financial tools with exact persistence and aggregation boundaries. | Contract → MCP surface → transport tests |
+| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | Deterministic release containment and adversarial evaluation for coding agents. | First catch → enforcement path → adversarial suite |
+| [PostHog Workbench PR #2754](https://github.com/PostHog/wizard-workbench/pull/2754) | An upstream evaluator contribution built inside another team's architecture. | PR review map → evaluator core → evidence boundaries |
 
 Across them, models may extract, rank, or draft; deterministic code owns binding state changes; humans retain judgment; receipts make the result auditable.
+
+Coding agents assist with research, implementation, testing, and adversarial review. I own architecture, acceptance criteria, claim boundaries, and release decisions. Several repositories are sanitized public extracts whose public history begins at extraction rather than project inception.
 
 ## A decision I am proud of
 

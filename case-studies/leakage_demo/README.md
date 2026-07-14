@@ -1,6 +1,8 @@
 # Synthetic feature-time leakage demo
 
+<!-- clean-docs:purpose -->
 This generated-data experiment shows how an apparently excellent model signal can come entirely from information that did not exist at prediction time.
+<!-- clean-docs:end purpose -->
 
 Run it with the Python standard library:
 
