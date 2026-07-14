@@ -1,6 +1,8 @@
 # Why I killed a 0.99 AUC model
 
+<!-- clean-docs:purpose -->
 **The metric was excellent. The prediction system was not.**
+<!-- clean-docs:end purpose -->
 
 I built a customer-retention risk system whose evaluation became more convincing as I added contextual features. A point-in-time reconstruction showed that the result depended on information unavailable when each historical prediction would have been made. I rejected the headline, kept only narrower decisions worth testing independently, and changed the product boundary.
 
