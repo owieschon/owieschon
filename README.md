@@ -41,3 +41,4 @@ I taught people, in whatever format they needed. A small collection, scraped fro
 - Optimize for decision quality with independent oracles, adversarial cases, and bounded claims.
 
 These are sanitized public artifacts with synthetic fixtures or explicitly bounded claims, not customer records or private implementation details. If your team needs someone who builds and teaches in the same motion, reach me through GitHub.
+
