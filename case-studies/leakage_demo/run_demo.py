@@ -39,16 +39,12 @@ def generate_panel(seed: int) -> dict:
             for period in PERIODS:
                 if period < CUTOFF_PERIOD:
                     label = pre_cutoff[period]
-                elif (
-                    period == CUTOFF_PERIOD
-                    and entity_index == 0
-                    and group_index in (0, 1)
-                ):
-                    # Two deliberately discordant cutoff rows keep the public
-                    # leaky receipt near, rather than exactly at, perfection.
-                    label = 1 - group_outcome
                 else:
-                    label = group_outcome
+                    # Post-cutoff labels follow the group outcome with seeded
+                    # discordance, so the leaky receipt is near-perfect for a
+                    # reason the data earns and varies across seeds.
+                    discordant = randomizer.random() < 0.01
+                    label = (1 - group_outcome) if discordant else group_outcome
                 rows.append(
                     {
                         "entity_id": entity_id,

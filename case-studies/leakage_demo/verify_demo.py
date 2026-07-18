@@ -220,14 +220,16 @@ def verify_all() -> dict[str, Any]:
             if seed == SEEDS[0] and claimed != expected:
                 raise VerificationError("the documented seed differs from expected_output.json")
             if not (
-                computed["leaky_auc"] >= 0.99
+                computed["leaky_auc"] >= 0.95
                 and computed["honest_cutoff_auc"] == 0.5
-                and computed["future_censor_leaky_auc"] <= 0.01
+                and computed["future_censor_leaky_auc"] <= 0.05
                 and computed["future_censor_leaky_rows_changed"] == 400
                 and computed["future_censor_honest_rows_changed"] == 0
             ):
                 raise VerificationError(f"causal leakage invariants failed for seed {seed}")
             results.append({**computed, "panel_sha256": panel_sha256})
+    if len({result["leaky_auc"] for result in results}) != len(results):
+        raise VerificationError("multi-seed verification did not produce distinct leaky AUC values")
     return {
         "schema": "temporal-leakage-verification.v1",
         "verified": True,
