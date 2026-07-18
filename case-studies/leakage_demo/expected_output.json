@@ -1,10 +1,10 @@
 {
   "cutoff_period": 2,
   "future_censor_honest_rows_changed": 0,
-  "future_censor_leaky_auc": 0.004775,
+  "future_censor_leaky_auc": 0.013212,
   "future_censor_leaky_rows_changed": 400,
   "honest_cutoff_auc": 0.5,
-  "leaky_auc": 0.994775,
+  "leaky_auc": 0.980032,
   "rows": 2000,
   "seed": 20260710
 }

@@ -6,7 +6,7 @@
 
 I built a customer-retention risk system whose evaluation became more convincing as I added contextual features. A point-in-time reconstruction showed that the result depended on information unavailable when each historical prediction would have been made. I rejected the headline, kept only narrower decisions worth testing independently, and changed the product boundary.
 
-The failure mode is public and executable: run the [standard-library experiment](./leakage_demo/run_demo.py), check it with the [independent multi-seed verifier](./leakage_demo/verify_demo.py), inspect the [thin notebook](./leakage_demo/temporal_leakage_demo.ipynb), or compare the checked-in [expected output](./leakage_demo/expected_output.json). For the documented synthetic seed, the leaky AUC rounds to 0.99; the honest cutoff AUC is 0.50.
+The failure mode is public and executable: run the [standard-library experiment](./leakage_demo/run_demo.py), check it with the [independent multi-seed verifier](./leakage_demo/verify_demo.py), inspect the [thin notebook](./leakage_demo/temporal_leakage_demo.ipynb), or compare the checked-in [expected output](./leakage_demo/expected_output.json). For the documented synthetic seed, the leaky AUC is 0.980032; the honest cutoff AUC is 0.50.
 
 > **Evidence boundary:** those numbers come only from generated data in this repository. The source-work account below is deliberately qualitative. The demo proves the leakage mechanism, not the performance of any non-public model or dataset.
 
