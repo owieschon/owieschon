@@ -16,7 +16,7 @@ This is a case study about judgment: when to stop optimizing a model and start q
 
 The result did not look like an obvious train/test mistake. The pipeline had labeled snapshots, separate train and holdout periods, class-imbalance handling, calibration, and feature explanations that fit the domain. Several iterations improved as context was added.
 
-That context also made intuitive sense. An account's trajectory should be easier to interpret beside its segment, territory, and service history. Better context appeared to remove false alarms. The measurements and the domain story reinforced each other—which is why the result deserved a more hostile test.
+That context also made intuitive sense. An account's trajectory should be easier to interpret beside its segment, territory, and service history. Better context appeared to remove false alarms. The measurements and the domain story reinforced each other, which is why the result deserved a more hostile test.
 
 The missing question was not “did this row belong to the holdout?” It was “could every value in this row have existed at the instant represented by the row?”
 
@@ -63,7 +63,7 @@ Killing the result was cheaper than asking a customer-facing team to spend credi
 
 The failure did not imply that every predictive task was useless. It showed that “predict churn” was too broad a product and too forgiving an evaluation target.
 
-I split the work into smaller decisions—ranking a reactivation opportunity, detecting a concrete decline, or deciding whether to monitor—and required each lane to survive its own temporal cutoff. I also added a product rule that mattered more than another decimal point: when current observed behavior contradicts a stale risk alarm, **ground truth** wins and the system falls back to monitoring.
+I split the work into smaller decisions (ranking a reactivation opportunity, detecting a concrete decline, or deciding whether to monitor) and required each lane to survive its own temporal cutoff. I also added a product rule that mattered more than another decimal point: when current observed behavior contradicts a stale risk alarm, **ground truth** wins and the system falls back to monitoring.
 
 The lesson was not to trust smaller models by default. It was to demand a specific decision, a declared information boundary, an honest baseline, and an explicit response when model evidence conflicts with current facts.
 
