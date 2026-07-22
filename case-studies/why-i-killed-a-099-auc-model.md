@@ -1,8 +1,12 @@
 # Why I killed a 0.99 AUC model
 
-<!-- clean-docs:purpose -->
+<!-- sourcebound:purpose -->
+This case study is for engineers reviewing a prediction system whose headline metric looks
+implausibly strong. It shows how future information entered historical features, how a
+point-in-time reconstruction exposed the leak, and why I rejected the headline result.
+<!-- sourcebound:end purpose -->
+
 **The metric was excellent. The prediction system was not.**
-<!-- clean-docs:end purpose -->
 
 I built a customer-retention risk system whose evaluation became more convincing as I added contextual features. A point-in-time reconstruction showed that the result depended on information unavailable when each historical prediction would have been made. I rejected the headline, kept only narrower decisions worth testing independently, and changed the product boundary.
 
@@ -30,6 +34,10 @@ flowchart LR
     B["Later peer outcomes"] --> C["Full-period aggregate"]
     C --> D
 ```
+
+Diagram: A historical snapshot and a full-period aggregate both enter model evaluation. Later peer
+outcomes feed that aggregate, so information unavailable at prediction time reaches the evaluated
+feature even though the historical row itself sits in the correct split.
 
 The account row could sit in the correct split while its cohort or lifetime aggregate still encoded the future. Cross-validation rewarded a signal that would not exist in a live prediction.
 

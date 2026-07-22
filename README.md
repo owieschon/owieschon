@@ -8,18 +8,14 @@ I was a teacher before I was an engineer. Teaching led me through 3D printing, m
 
 [TrashPal](https://github.com/owieschon/trashpal) is the best single example of how I build and teach: a bounded agent investigates one service exception and drafts a cited recovery, while deterministic code owns approval, execution, recovery, and proof. It was distilled from [self-driving-trash-palace](https://github.com/owieschon/self-driving-trash-palace), the fuller build, which carries the deeper knowledge graph, evaluation harness, and architecture decisions if you want them.
 
-The short version: the model can propose. Host code owns authority. Durable records and independent verification decide what happened. People and agents learn from the same hash-pinned knowledge graph.
-
-## One upstream contribution
-
-[PostHog Wizard Workbench PR #2754](https://github.com/PostHog/wizard-workbench/pull/2754) added the core of a project-detection evaluator inside another team's architecture. The maintainer chose to carry its fixtures and evaluation ideas into a broader agent-and-skill-driven direction. That interaction is useful evidence of how I prefer to contribute: do the work, make its boundaries inspectable, and leave maintainers room to steer.
+TrashPal's short version: the model can propose. Host code owns authority. Durable records and independent verification decide what happened. The fuller build adds the shared, hash-pinned knowledge graph used by people and agents.
 
 ## Teaching, before and after agents
 
 My current documentation work treats teaching as an executable system:
 
 - [Trustworthy docs for humans and agents](https://github.com/owieschon/self-driving-trash-palace/blob/main/knowledge/resources/trustworthy-docs-for-humans-and-agents.md) defines one canonical owner per fact, ordered learning paths, and evidence labels that prose cannot upgrade.
-- [sourcebound](https://github.com/owieschon/sourcebound) binds documentation claims to source evidence and fails CI when they drift.
+- [Sourcebound](https://github.com/owieschon/sourcebound) binds documentation claims to source evidence and fails CI when they drift.
 - [Catch a lying doc](https://github.com/owieschon/sourcebound/blob/main/docs/learn/tutorial-catch-a-lying-doc.md) teaches the system through a runnable failure rather than an abstract rule.
 
 Before that, I taught people in whatever medium the problem required:
@@ -38,11 +34,11 @@ These six repositories show the systems I would start with and the question each
 | Project | Question it answers | Best entry point |
 | --- | --- | --- |
 | [TrashPal](https://github.com/owieschon/trashpal) | How can an agent participate in consequential automation without becoming the authority? | [Core build contract](https://github.com/owieschon/trashpal/blob/main/docs/architecture/CORE_BUILD_CONTRACT.md) |
-| [sourcebound](https://github.com/owieschon/sourcebound) | How can a repository detect when documentation outruns its evidence? | [Documentation standard](https://github.com/owieschon/sourcebound/blob/main/STANDARD.md) |
+| [Sourcebound](https://github.com/owieschon/sourcebound) | How can a repository detect when documentation outruns its evidence? | [Documentation standard](https://github.com/owieschon/sourcebound/blob/main/STANDARD.md) |
 | [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | How can a coding-agent governance claim fail when execution or evidence drifts? | [Evidence contract](https://github.com/owieschon/agent-governance-lab/blob/main/docs/EVIDENCE_CONTRACT.md) |
-| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | How can AI draft customer actions while a person releases one exact, evidence-bound payload? | [System tour](https://github.com/owieschon/ultra-csm/blob/main/docs/TOUR.md) |
-| [bank-mcp](https://github.com/owieschon/bank-mcp) | How can an LLM narrate financial data it is never allowed to compute? | [Architecture](https://github.com/owieschon/bank-mcp/blob/main/docs/ARCHITECTURE.md) |
-| [Contact Verifier](https://github.com/owieschon/contact-verifier) | How should identity risk stay bounded when DNS and tenant evidence cannot justify certainty? | [Architecture](https://github.com/owieschon/contact-verifier/blob/main/ARCHITECTURE.md) |
+| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | How can AI draft customer actions while a distinct approval record stays bound to one exact, evidence-backed payload? | [System tour](https://github.com/owieschon/ultra-csm/blob/main/docs/TOUR.md) |
+| [bank-mcp](https://github.com/owieschon/bank-mcp) | How can deterministic finance remain authoritative when a model narrates or proposes bounded inputs? | [Architecture](https://github.com/owieschon/bank-mcp/blob/main/docs/ARCHITECTURE.md) |
+| [Contact Verifier](https://github.com/owieschon/contact-verifier) | How should a contact-data tool report syntax and DNS mail-routing evidence without claiming mailbox or person validity? | [Architecture](https://github.com/owieschon/contact-verifier/blob/main/ARCHITECTURE.md) |
 
 ## A decision I am proud of
 
