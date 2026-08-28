@@ -1,13 +1,13 @@
 # Owen Schoeniger
 
-I build agent systems and full-stack products that turn ambiguous work into
-verified outcomes. My work spans product interfaces, TypeScript and Python
-services, data systems, model evaluation, tool-use runtimes, and the checks that
-decide whether an agent actually finished the job.
+I build software for work that is expensive to get wrong. The common thread is
+decision-making under incomplete information: models interpret messy inputs;
+ordinary code controls permission, state, spend, and the definition of done.
 
-I work best on small teams close to customers and production: find the real
-failure, reduce it to a testable contract, ship the narrow fix, and keep the
-result inspectable.
+I work across the whole product—interface, TypeScript and Python services,
+PostgreSQL, model pipelines, deployment, and operations. I like small teams,
+direct contact with users, and problems where the first explanation turns out
+not to be the real one.
 
 ## Shipped product: Reter
 
@@ -17,10 +17,10 @@ system: a React application, TypeScript APIs, PostgreSQL data model, ML
 pipelines, scheduled recomputation, and an agent that turns account evidence
 into proposed actions.
 
-The agent runtime owns its tool loop, context composition, capability loading,
-retry budget, cancellation, and approval boundary. Actions that affect money or
-leave the system wait for a distinct human decision; read-only intelligence is
-also exposed through MCP for other tools to consume.
+Reter's account-research system gathers evidence and proposes next steps. It can
+read broadly, but anything that spends money or changes an external system
+waits for explicit approval. The same read-only intelligence is available over
+MCP for other software to consume.
 
 The most important model result was one I did not ship. A broad churn model
 reported roughly 0.99 cross-validation AUC until I traced the result to temporal
@@ -52,23 +52,18 @@ failed when their evidence does not support a stronger conclusion. The public
 | [bank-mcp](https://github.com/owieschon/bank-mcp) | A local finance system with deterministic forecasts, integer-cents accounting, MCP access, and bounded model narration | [Architecture](https://github.com/owieschon/bank-mcp/blob/main/docs/ARCHITECTURE.md) |
 | [Contact Verifier](https://github.com/owieschon/contact-verifier) | A small service that exposes the same bounded verification contract through REST, MCP, and Parquet | [Architecture](https://github.com/owieschon/contact-verifier/blob/main/ARCHITECTURE.md) |
 
-I also contributed the core of a project-detection evaluator to
-[PostHog Wizard Workbench](https://github.com/PostHog/wizard-workbench/pull/2754).
-The maintainers carried its fixtures and evaluation ideas into a broader agent-
-and skill-driven design.
+I also built a project-detection evaluator in
+[PostHog Wizard Workbench PR #2754](https://github.com/PostHog/wizard-workbench/pull/2754).
+The PR was not merged as written; maintainers incorporated parts of its fixture
+and evaluation approach into a broader redesign.
 
-## How I engineer agent systems
+## How I build
 
-- Start with the user's deliverable, then define the evidence that would prove
-  it exists.
-- Turn production failures and ambiguous outcomes into repeatable evaluations.
-- Let models interpret and propose; keep authorization, state transitions, and
-  completion checks in code.
-- Treat context, skills, tools, retries, and model choice as runtime policy, not
-  prompt folklore.
-- Build the product surface, backend, data path, deployment, and observability
-  as one system.
-- State what is simulated, what is measured, and what remains unproven.
+I use model judgment for fuzzy evidence and ordinary code for permissions,
+budgets, and state transitions. I put the acceptance rule next to execution,
+turn production surprises into fixtures, and preserve enough of each run to
+reconstruct why it succeeded or stopped. When a flattering metric collapses
+under a better test, I narrow or kill the claim.
 
 ## Background
 
