@@ -65,15 +65,3 @@ budgets, and state transitions. I put the acceptance rule next to execution,
 turn production surprises into fixtures, and preserve enough of each run to
 reconstruct why it succeeded or stopped. When a flattering metric collapses
 under a better test, I narrow or kill the claim.
-
-## Background
-
-I was a teacher before I was an engineer. I later worked across 3D printing,
-manufacturing, and industrial technology. That background still shapes how I
-build: expose the system's state, make failure recoverable, and give both users
-and engineers evidence they can inspect.
-
-Coding agents assist with research, implementation, testing, and adversarial
-review. I own architecture, acceptance criteria, claim boundaries, and release
-decisions. Public repositories use synthetic fixtures or bounded public
-evidence, never customer records.
