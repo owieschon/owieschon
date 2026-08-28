@@ -1,55 +1,77 @@
 # Owen Schoeniger
 
-I build developer tools and learning systems that help people and agents do difficult work without guessing.
+I build agent systems and full-stack products that turn ambiguous work into
+verified outcomes. My work spans product interfaces, TypeScript and Python
+services, data systems, model evaluation, tool-use runtimes, and the checks that
+decide whether an agent actually finished the job.
 
-I was a teacher before I was an engineer. Teaching led me through 3D printing, manufacturing, and industrial technology. The throughline is the same: make the system understandable, make the dangerous boundaries explicit, and give the learner evidence they can inspect.
+I work best on small teams close to customers and production: find the real
+failure, reduce it to a testable contract, ship the narrow fix, and keep the
+result inspectable.
 
-## Start with TrashPal
+## Shipped product: Reter
 
-[TrashPal](https://github.com/owieschon/trashpal) is the best single example of how I build and teach: a bounded agent investigates one service exception and drafts a cited recovery, while deterministic code owns approval, execution, recovery, and proof. It was distilled from [self-driving-trash-palace](https://github.com/owieschon/self-driving-trash-palace), the fuller build, which carries the deeper knowledge graph, evaluation harness, and architecture decisions if you want them.
+[Reter](https://reter.io/) is a revenue-intelligence product for manufacturers
+and distributors. I built it from the customer problem through the operating
+system: a React application, TypeScript APIs, PostgreSQL data model, ML
+pipelines, scheduled recomputation, and an agent that turns account evidence
+into proposed actions.
 
-TrashPal's short version: the model can propose. Host code owns authority. Durable records and independent verification decide what happened. The fuller build adds the shared, hash-pinned knowledge graph used by people and agents.
+The agent runtime owns its tool loop, context composition, capability loading,
+retry budget, cancellation, and approval boundary. Actions that affect money or
+leave the system wait for a distinct human decision; read-only intelligence is
+also exposed through MCP for other tools to consume.
 
-## Teaching, before and after agents
+The most important model result was one I did not ship. A broad churn model
+reported roughly 0.99 cross-validation AUC until I traced the result to temporal
+leakage. Point-in-time reconstruction reduced it toward chance, so I replaced
+the broad claim with narrower prediction lanes that generalized. The public
+case study is [Why I killed a 0.99 AUC model](./case-studies/why-i-killed-a-099-auc-model.md).
 
-My current documentation work treats teaching as an executable system:
+## Building now: Rackful
 
-- [Trustworthy docs for humans and agents](https://github.com/owieschon/self-driving-trash-palace/blob/main/knowledge/resources/trustworthy-docs-for-humans-and-agents.md) defines one canonical owner per fact, ordered learning paths, and evidence labels that prose cannot upgrade.
-- [Sourcebound](https://github.com/owieschon/sourcebound) binds documentation claims to source evidence and fails CI when they drift.
-- [Catch a lying doc](https://github.com/owieschon/sourcebound/blob/main/docs/learn/tutorial-catch-a-lying-doc.md) teaches the system through a runnable failure rather than an abstract rule.
+[Rackful](https://rackful.ai/) is an execution layer for expensive AI workloads.
+The current work focuses on turning workload intent into a bounded execution
+contract, selecting compute with evidence, preserving artifacts and receipts,
+and refusing to label a run successful when the requested deliverable is
+missing.
 
-Before that, I taught people in whatever medium the problem required:
+## Agent systems and engineering tools
 
-| Artifact | Teaching work |
-| --- | --- |
-| [MakerGear Help Center](https://makergear.zendesk.com/hc/en-us) ([archived copy](https://web.archive.org/web/20250717214042/https://makergear.zendesk.com/hc/en-us)) | Wrote most of the knowledge base for a 3D-printer manufacturer, covering setup, slicing, materials, maintenance, and troubleshooting for users in more than 80 countries. |
-| [M3-SE](https://cdn.shopify.com/s/files/1/0030/7372/files/M3-SE_EN.pdf?6088892816647700696) and [M3-ID](https://cdn.shopify.com/s/files/1/0030/7372/files/M3-ID_EN_CE_Final_2.pdf?16795155840968660542) | Shipped two hardware user guides from safety and setup through the first successful print. |
-| [MakerBot Educators Guidebook](https://bpb-us-e1.wpmucdn.com/blogs.gwu.edu/dist/7/2667/files/2019/09/MakerBot_Educators_Guidebook_vf2.pdf) | Contributed classroom material for teaching 3D printing; credited on page 194. |
-| [Makerspace design walkthrough](https://www.youtube.com/watch?v=Kwo2gxM78Ds) | On-camera teaching from the college makerspace program I led and scaled into a six-day-a-week operation. |
-
-## Selected systems
-
-These six repositories show the systems I would start with and the question each one answers.
-
-| Project | Question it answers | Best entry point |
+| Project | What it demonstrates | Start here |
 | --- | --- | --- |
-| [TrashPal](https://github.com/owieschon/trashpal) | How can an agent participate in consequential automation without becoming the authority? | [Core build contract](https://github.com/owieschon/trashpal/blob/main/docs/architecture/CORE_BUILD_CONTRACT.md) |
-| [Sourcebound](https://github.com/owieschon/sourcebound) | How can a repository detect when documentation outruns its evidence? | [Documentation standard](https://github.com/owieschon/sourcebound/blob/main/STANDARD.md) |
-| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | How can a coding-agent governance claim fail when execution or evidence drifts? | [Evidence contract](https://github.com/owieschon/agent-governance-lab/blob/main/docs/EVIDENCE_CONTRACT.md) |
-| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | How can AI draft customer actions while a distinct approval record stays bound to one exact, evidence-backed payload? | [System tour](https://github.com/owieschon/ultra-csm/blob/main/docs/TOUR.md) |
-| [bank-mcp](https://github.com/owieschon/bank-mcp) | How can deterministic finance remain authoritative when a model narrates or proposes bounded inputs? | [Architecture](https://github.com/owieschon/bank-mcp/blob/main/docs/ARCHITECTURE.md) |
-| [Contact Verifier](https://github.com/owieschon/contact-verifier) | How should a contact-data tool report syntax and DNS mail-routing evidence without claiming mailbox or person validity? | [Architecture](https://github.com/owieschon/contact-verifier/blob/main/ARCHITECTURE.md) |
+| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | A reproducible evaluation of whether execution gates catch coding-agent failures that instructions and green tests miss | [Evidence contract](https://github.com/owieschon/agent-governance-lab/blob/main/docs/EVIDENCE_CONTRACT.md) |
+| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | A full-stack agent workflow that assembles evidence, proposes an action, and binds approval to the exact payload | [Live demo](https://ultra-csm.vercel.app/) |
+| [sourcebound](https://github.com/owieschon/sourcebound) | A developer tool that binds documentation claims to source evidence and fails CI when they drift | [Documentation standard](https://github.com/owieschon/sourcebound/blob/main/STANDARD.md) |
+| [bank-mcp](https://github.com/owieschon/bank-mcp) | A local finance system with deterministic forecasts, integer-cents accounting, MCP access, and bounded model narration | [Architecture](https://github.com/owieschon/bank-mcp/blob/main/docs/ARCHITECTURE.md) |
+| [Contact Verifier](https://github.com/owieschon/contact-verifier) | A small service that exposes the same bounded verification contract through REST, MCP, and Parquet | [Architecture](https://github.com/owieschon/contact-verifier/blob/main/ARCHITECTURE.md) |
 
-## A decision I am proud of
+I also contributed the core of a project-detection evaluator to
+[PostHog Wizard Workbench](https://github.com/PostHog/wizard-workbench/pull/2754).
+The maintainers carried its fixtures and evaluation ideas into a broader agent-
+and skill-driven design.
 
-[Why I killed a 0.99 AUC model](./case-studies/why-i-killed-a-099-auc-model.md) pairs a qualitative decision record with a seeded public experiment and an independent multi-seed verifier. A full-period feature appears nearly perfect until a point-in-time reconstruction removes the future information it was using.
+## How I engineer agent systems
 
-## How I work
+- Start with the user's deliverable, then define the evidence that would prove
+  it exists.
+- Turn production failures and ambiguous outcomes into repeatable evaluations.
+- Let models interpret and propose; keep authorization, state transitions, and
+  completion checks in code.
+- Treat context, skills, tools, retries, and model choice as runtime policy, not
+  prompt folklore.
+- Build the product surface, backend, data path, deployment, and observability
+  as one system.
+- State what is simulated, what is measured, and what remains unproven.
 
-- Start with the customer or operator's real decision, then map the technical contract around it.
-- Give one fact one owner and derive secondary surfaces instead of maintaining parallel truths.
-- Use deterministic checks for authority, safety, and product outcomes; use models where interpretation is genuinely required.
-- Retain receipts for completion claims and label blocked evidence instead of replacing it with confidence.
-- Translate the same system for engineers, customers, operators, executives, and agents without changing its underlying truth.
+## Background
 
-Coding agents assist with research, implementation, testing, and adversarial review. I own architecture, acceptance criteria, claim boundaries, and release decisions. Public repositories use synthetic fixtures or explicitly bounded evidence, never customer records or private implementation details.
+I was a teacher before I was an engineer. I later worked across 3D printing,
+manufacturing, and industrial technology. That background still shapes how I
+build: expose the system's state, make failure recoverable, and give both users
+and engineers evidence they can inspect.
+
+Coding agents assist with research, implementation, testing, and adversarial
+review. I own architecture, acceptance criteria, claim boundaries, and release
+decisions. Public repositories use synthetic fixtures or bounded public
+evidence, never customer records.
