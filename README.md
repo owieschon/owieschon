@@ -1,8 +1,8 @@
 # Owen Schoeniger
 
-I build software for work that is expensive to get wrong. The common thread is
-decision-making under incomplete information: models interpret messy inputs;
-ordinary code controls permission, state, spend, and the definition of done.
+I build AI agents for consequential work. They interpret messy inputs and
+propose or execute useful next steps; the surrounding software controls
+permission, state, spend, and the definition of done.
 
 I work across the whole product—interface, TypeScript and Python services,
 PostgreSQL, model pipelines, deployment, and operations. I like small teams,
