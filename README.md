@@ -31,18 +31,24 @@ case study is [Why I killed a 0.99 AUC model](./case-studies/why-i-killed-a-099-
 ## Building now: Rackful
 
 [Rackful](https://rackful.ai/) is an execution layer for expensive AI workloads.
-The current work focuses on turning workload intent into a bounded execution
-contract, selecting compute with evidence, preserving artifacts and receipts,
-and refusing to label a run successful when the requested deliverable is
-missing.
+It has completed six workload families on live RunPod GPUs, including full
+`lm-eval` + vLLM runs for 7B and 8B open models over 11,902 documents and 42,028
+requests. Accepted receipts bind the workload, artifacts, runtime telemetry,
+spend ceiling, and confirmed teardown; a green provider state is not enough.
+
+A predeclared held-out pair used one accepted run to choose the batch size for a
+distinct target. Other runs remain labeled calibration, simulated, blocked, or
+failed when their evidence does not support a stronger conclusion. The public
+[proof surface](https://rackful.ai/proof) shows the current claim boundary.
 
 ## Agent systems and engineering tools
 
 | Project | What it demonstrates | Start here |
 | --- | --- | --- |
-| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | A reproducible evaluation of whether execution gates catch coding-agent failures that instructions and green tests miss | [Evidence contract](https://github.com/owieschon/agent-governance-lab/blob/main/docs/EVIDENCE_CONTRACT.md) |
-| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | A full-stack agent workflow that assembles evidence, proposes an action, and binds approval to the exact payload | [Live demo](https://ultra-csm.vercel.app/) |
-| [sourcebound](https://github.com/owieschon/sourcebound) | A developer tool that binds documentation claims to source evidence and fails CI when they drift | [Documentation standard](https://github.com/owieschon/sourcebound/blob/main/STANDARD.md) |
+| [Agent Governance Lab](https://github.com/owieschon/agent-governance-lab) | On a fixed corpus, written rules and ordinary tests stopped 0/6 violations; the enforced gate stopped 6/6, while both released the two clean controls | [Receipt-verifying explorer](https://owieschon.github.io/agent-governance-lab/) |
+| [Customer Action Control Plane](https://github.com/owieschon/ultra-csm) | A full-stack agent workflow with a live read-only UI and 24/24 hard gates for evidence, consent, tenant separation, grounding, injection defense, reproducibility, and proposal-only behavior | [Live demo](https://ultra-csm.vercel.app/) |
+| [Career Scout](https://github.com/owieschon/career-scout) | A cost-layered agent pipeline that runs deterministic gates before a task-pinned model judge, tracks model spend through one chokepoint, and exercises the boundary with 430 passing tests | [Latest public CI](https://github.com/owieschon/career-scout/actions/runs/29916107926) |
+| [sourcebound](https://github.com/owieschon/sourcebound) | A released developer tool that binds documentation claims to source evidence and fails CI when they drift | [v2.0 release](https://github.com/owieschon/sourcebound/releases/tag/v2.0.0) |
 | [bank-mcp](https://github.com/owieschon/bank-mcp) | A local finance system with deterministic forecasts, integer-cents accounting, MCP access, and bounded model narration | [Architecture](https://github.com/owieschon/bank-mcp/blob/main/docs/ARCHITECTURE.md) |
 | [Contact Verifier](https://github.com/owieschon/contact-verifier) | A small service that exposes the same bounded verification contract through REST, MCP, and Parquet | [Architecture](https://github.com/owieschon/contact-verifier/blob/main/ARCHITECTURE.md) |
 
