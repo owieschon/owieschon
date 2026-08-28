@@ -1,13 +1,13 @@
 # Owen Schoeniger
 
-I build AI agents for consequential work. They interpret messy inputs and
-propose or execute useful next steps; the surrounding software controls
-permission, state, spend, and the definition of done.
+I build AI agents that turn messy operational inputs into decisions and
+completed work. Reter researches manufacturer and distributor accounts and
+proposes customer actions; Rackful plans, runs, and verifies GPU workloads.
 
-I work across the whole product—interface, TypeScript and Python services,
-PostgreSQL, model pipelines, deployment, and operations. I like small teams,
-direct contact with users, and problems where the first explanation turns out
-not to be the real one.
+I build the surrounding product end to end—interfaces, TypeScript and Python
+services, PostgreSQL, model pipelines, deployment, and operations. Models
+handle uncertain evidence; ordinary code controls permission, state, spend,
+and the definition of done.
 
 ## Shipped product: Reter
 
