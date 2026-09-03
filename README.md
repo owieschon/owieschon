@@ -41,9 +41,9 @@ inventing a part.
 - [GoNoGo](https://github.com/owieschon/gonogo) — a coding-agent task evaluator
   that compares the specification with the diff, tests, and transcript, then
   pressure-tests its verdict against adversarial fixtures.
-- [Contact Verifier](https://github.com/owieschon/contact-verifier) — a
-  multi-tenant email-evidence service exposed through REST, MCP, Parquet, and
-  CSV.
+- [bank.mcp](https://github.com/owieschon/bank-mcp) — a local personal-finance
+  system with exact integer-cents storage, deterministic forecasts, and a model
+  boundary that cannot overwrite computed figures.
 
 ## External contributions
 
