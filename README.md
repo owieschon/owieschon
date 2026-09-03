@@ -1,19 +1,54 @@
 # Owen Schoeniger
 
-I build AI agents for multi-step work across data, software, and
-infrastructure. They interpret messy inputs and propose or execute useful next
-steps; the surrounding software controls permission, state, spend, and the
-definition of done.
+Most of my work starts with a workflow nobody has specified cleanly.
 
-I work across the whole product—interface, TypeScript and Python services,
-PostgreSQL, model pipelines, deployment, and operations. I like small teams,
-direct contact with users, and problems where the first explanation turns out
-not to be the real one.
+I figure out how the work actually happens, identify the decisions and failure
+modes that matter, and build whatever the result requires. That work has
+included industrial catalog resolution, revenue intelligence, customer
+operations, developer tools, and agent infrastructure.
 
 ## How I build
 
-I use model judgment for fuzzy evidence and ordinary code for permissions,
-budgets, and state transitions. I put the acceptance rule next to execution,
-turn production surprises into fixtures, and preserve enough of each run to
-reconstruct why it succeeded or stopped. When a flattering metric collapses
-under a better test, I narrow or kill the claim.
+I work at whatever layer is constraining the result. Sometimes that is the
+interface or data model; sometimes it is a service, model boundary, integration,
+deployment, or recovery path. The layer matters less than whether the whole
+system works.
+
+I use models where evidence is ambiguous. Identity, permissions, budgets, state
+changes, and external effects stay in explicit code. I put acceptance criteria
+beside the work that must satisfy them, preserve the evidence behind
+consequential results, and turn failures into regression tests.
+
+I distrust flattering results. When a
+[0.99 AUC model](case-studies/why-i-killed-a-099-auc-model.md) failed
+point-in-time validation, I discarded the headline result, narrowed the product
+decision, and rebuilt the evaluation around historically available evidence.
+
+## Field work
+
+Inside a traditional manufacturer, I built a customer CRM integrated with an
+ERP and a catalog-resolution engine. It maps messy rep and voice input to valid
+system-of-record identifiers; ambiguous requests remain unresolved rather than
+inventing a part.
+
+## Selected systems
+
+- [Sourcebound](https://github.com/owieschon/sourcebound) — a released CLI that
+  binds documentation claims to source evidence and fails CI when they drift.
+- [Ultra CSM](https://github.com/owieschon/ultra-csm) — a synthetic, full-stack
+  customer-action system that assembles evidence, proposes a next step, and
+  requires a separate approval record tied to the proposed action.
+- [GoNoGo](https://github.com/owieschon/gonogo) — a coding-agent task evaluator
+  that compares the specification with the diff, tests, and transcript, then
+  pressure-tests its verdict against adversarial fixtures.
+- [Contact Verifier](https://github.com/owieschon/contact-verifier) — a
+  multi-tenant email-evidence service exposed through REST, MCP, Parquet, and
+  CSV.
+
+## External contributions
+
+Two fixes for [Superset](https://github.com/superset-sh/superset) are currently
+under review: correct pull-request merge attribution
+([#7110](https://github.com/superset-sh/superset/pull/7110)) and preserve agent
+session recovery after terminal cleanup
+([#7127](https://github.com/superset-sh/superset/pull/7127)).
