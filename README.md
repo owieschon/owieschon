@@ -11,27 +11,25 @@ operations, developer tools, and agent infrastructure.
 
 Two fixes for [Superset](https://github.com/superset-sh/superset) are merged
 upstream: correct pull-request merge attribution
-([#7110](https://github.com/superset-sh/superset/pull/7110), merged
-[`504c4840`](https://github.com/superset-sh/superset/commit/504c4840ff02b0c2a166c8020c3adabb57249221))
-and preserve agent session recovery after terminal cleanup
-([#7127](https://github.com/superset-sh/superset/pull/7127), merged
-[`534a1688`](https://github.com/superset-sh/superset/commit/534a1688a0daacb16f50cefa39e0612badb2389e)).
+([#7110](https://github.com/superset-sh/superset/pull/7110)) and preserve agent
+session recovery after terminal cleanup
+([#7127](https://github.com/superset-sh/superset/pull/7127)).
 
 ## Selected systems
 
 - [Sourcebound](https://github.com/owieschon/sourcebound) — a released CLI that
   binds documentation claims to source evidence and fails CI when they drift.
-  [Demo](https://owieschon.github.io/sourcebound/),
+  [Recorded demo](https://owieschon.github.io/sourcebound/),
   [tutorial](https://github.com/owieschon/sourcebound/blob/main/docs/learn/tutorial-catch-a-lying-doc.md).
-- [Ultra CSM](https://ultra-csm.vercel.app/) — a synthetic customer-action
-  system with a browser-only approve/deny/edit simulation; its local backend
-  ties authorization to the proposed action's payload, not just the action
-  type.
+- [Ultra CSM](https://github.com/owieschon/ultra-csm) — a synthetic
+  customer-action system with a browser-only approve/deny/edit simulation;
+  its local backend ties authorization to the proposed action's payload, not
+  just the action type. [Synthetic demo](https://ultra-csm.vercel.app/).
 - [GoNoGo](https://github.com/owieschon/gonogo) — a coding-agent task
   evaluator that compares the specification with the diff, tests, and
-  transcript, then pressure-tests its verdict against adversarial fixtures.
-  It evaluates evidence, not proven judgment accuracy; no broad efficacy
-  numbers are published. [Recorded, credential-free demo](https://github.com/owieschon/gonogo/blob/main/docs/example-verdict.html).
+  transcript, checks claimed changes against the evidence, and pressure-tests
+  its verdict against adversarial fixtures with deterministic replay. Human
+  calibration is unverified. [Run the recorded demo](https://github.com/owieschon/gonogo#readme).
 
 ## How I build
 
