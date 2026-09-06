@@ -48,15 +48,6 @@ I distrust flattering results. When a
 point-in-time validation, I discarded the headline result, narrowed the product
 decision, and rebuilt the evaluation around historically available evidence.
 
-## Field work
+## Field work - Reter.io
 
-Inside a traditional manufacturer, I built a customer CRM integrated with an
-ERP and a catalog-resolution engine. It maps messy rep and voice input to valid
-system-of-record identifiers; ambiguous requests remain unresolved rather than
-inventing a part.
-
-## Other projects
-
-- [bank.mcp](https://github.com/owieschon/bank-mcp) — a local personal-finance
-  system with exact integer-cents storage, deterministic forecasts, and a model
-  boundary that cannot overwrite computed figures.
+I build and deploy agents across CRM/ERP systems that help manufacturers automate and scale time-consuming, error-prone workflows in sales ops, revenue ops, customer service, and manufacturing ops (quoting, order management, demand forecasting, inventory management, purchasing, job routing, and more).
